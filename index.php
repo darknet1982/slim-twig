@@ -49,17 +49,6 @@ $container['view'] = function ($container) {
 };
 /*********** END of TWIG *****************/
 
-/*$app->add(function (Request $request, Response $response, callable $next){
-    $path = $request->getAttribute('route')->getPattern();
-	if ($path == '/admin'){
-        var_dump($request->getAttribute('route')->getPattern());
-    }
-	$response = $next($request, $response);
-	$response->getBody()->write('AFTER');
-
-	return $response;
-});*/
-//var_dump ($app->getContainer()->request);
 $app->add(new \Libraries\AuthMiddleware(array('routeName'=>'/admin')));
 					//\Libraries\Authclass::getInstance(new \Model\AModel)
 										//new \Libraries\Aclclass
