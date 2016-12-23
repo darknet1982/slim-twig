@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="blog_container">
+		<h3>BLOG</h3>
+		<div class="text">
+
+		<div class="content">
+    		<div class="news_item">
+    		{%if navigation != false%}
+		        {% for item in items %}
+		                <br>
+		                <h2><a href="{{uri}}blog/{{item.alias}}" >{{item.title}}</a></h2>
+		               <span>{{item.anons|raw}}</span>
+		                <p>{{item.date|date("d.m.Y")}}</p>
+		                <span><a href="{{uri}}blog/{{item.alias}}">Read more</a></span>
+		        {%endfor%}
+	        {%else%}
+	        	{% for item in items %}
+		        	<h2><a href="{{uri}}blog/{{item.alias}}" >{{item.title}}</a></h2>
+		        	<span>{{item.text|raw}}</span>
+		        	<p>{{item.date|date("d.m.Y")}}</p>
+		        	<a href="{{uri}}blog" >Назад</a>
+	        	{%endfor%}
+	        {%endif%}
+  			  </div>
+		</div>
+		{%if navigation != false%}
+			<div id="navigation">
+		    	<ul>
+			        <li><a href="{{uri}}blog">First page</a></li>
+			        <li><a href="{{uri}}blog{%if navigation.last_page is defined%}/{{navigation.last_page}}{%else%}{%endif%}">&lt;</a></li>
+			        {%for page in navigation.previous%}
+			            <li><a href="{{uri}}blog/{{page}}">{{page}}</a></li>
+			        {%endfor%}
+			        <li><a href="{{uri}}blog/{{navigation.current}}">{{navigation.current}}</a></li>
+			        {%for page in navigation.next%}
+			            <li><a href="{{uri}}blog/{{page}}">{{page}}</a></li>
+			        {%endfor%}
+			        {%if navigation.next_pages is defined%}
+			        <li><a href="{{uri}}blog/{{navigation.next_pages}}">&gt;</a></li>
+			        {%else%}
+			        <li><a href="{{uri}}blog/{{navigation.current}}">&gt;</a></li>
+			        {%endif%}
+			        {%if navigation.end is defined%}
+			        <li><a href="{{uri}}blog/{{navigation.end}}">Last page</a></li>
+			        {%else%}
+			        <li><a href="{{uri}}blog/{{navigation.current}}">Last page</a></li>
+			        {%endif%}
+		   		 </ul>  
+			</div>
+		{%endif%}
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="content">
+    <div class="blocck col-md-12">
+
+        <div class="leftside col-md-8">
+            <div class="ds">
+            <h2 class="feedback1">Авторизация</h2>
+                <form action="{{uri}}login" method="POST">
+                    <input class="baton" type="submit" name="logout" value="Exit">
+                </form>
+            </div>
+
+        </div>  
+
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="blocck col-md-12">
+
+        <div class="leftside col-md-8">
+            <div class="ds">
+            <h2 class="feedback1">Авторизация</h2>
+            {%if loginerror is defined%}
+            <div class="loginerror">
+            <small>{{loginerror}}</small>
+            </div>
+            {%endif%}
+            {%if msg is defined%}
+            <div class="msg">
+            <small>{{msg}}</small>
+            </div>
+            {%endif%}
+                <form action="{{uri}}login" method="POST">
+                    <label for="login">Login: </label>
+                    <input name="name" type="text" size="17" placeholder="Enter your login" id="login" class="login" maxlength="50"><br>
+                    <label for="pass">Password: </label>
+                    <input name="pass" type="password" size="17" placeholder="Enter your password" id="pass" class="login" maxlength="12"><br>
+                    <input class="baton" type="submit" name="login" value="Enter">
+                </form>
+            </div>
+        </div>  
+
+    </div>
+</div>

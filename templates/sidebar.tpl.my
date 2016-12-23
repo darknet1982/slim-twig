@@ -1,0 +1,12 @@
+<div id="sidebar">
+	<div class="text-container">
+
+	    {% for item in news %}    
+	    <div class="newsItem">
+	       <h4><a href="{{uri}}blog/{{item.id}}">{{item.title}}</a></h4>
+	        <span>{{item.anons}}</span>
+	        <p class="date">{{item.date|date("m.d.Y")}}</p>
+	    </div>
+	    {%endfor%}
+	</div>
+</div>

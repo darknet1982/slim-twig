@@ -1,0 +1,23 @@
+<div id="navigation">
+    <ul>
+{% for item in pages %}
+{% if item.cat_alias != 'services'%}
+            <li><a href="{{uri}}{{item.cat_alias}}">{{item.cat_name_ru}}</a></li>
+{% else %}
+            <li><a href="{{uri}}{{item.cat_alias}}">{{item.cat_name_ru}}</a>
+                <div class="dd-holder">
+                    <div class="dd-t"></div>
+                        <div class="dd">
+                            <ul>
+{% for page in subpages %}
+                                <li><a href="{{uri}}{{item.cat_alias}}/{{page.sub_alias}}">{{page.sub_name_ru}}</a>
+{%endfor%}
+                            </ul>
+                        </div>
+                    <div class="dd-b"></div>
+                </div>
+            </li>
+{%endif%}   
+{%endfor%}
+    </ul>
+</div>

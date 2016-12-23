@@ -1,0 +1,39 @@
+<hr>
+<div class="content">
+<div class="blocck col-md-12">
+
+                <div class="leftside col-md-8">
+                    <div class="ds">
+                        <h2 class="feedback1">Напишите нам</h2>
+                            <form action="{{uri}}contacts" method="POST">
+                                <fieldset class="feedbackarea" style="width:50%;">
+                                    <input name="name" type="text" size="20" placeholder="Your Name" class="feedback col-md-4" maxlength="50">
+                                    <input name="email" type="text" size="20" class="feedback col-md-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="e-mail@domain.ye" maxlength="50">
+                                    <input name="subj" type="text" size="20" placeholder="Subject" class="feedback col-md-4" maxlength="50">
+                                    <p><textarea name="text" id="comment" placeholder="Message" class="feedback2" cols="72" rows="7" maxlength="200"></textarea></p>
+                                    <p>
+                                    <input class="baton" type="submit" value="Отправить">
+                                    <input class="baton" type="reset" value="Очистить"></p>
+                                </fieldset> 
+                            </form>
+                    </div>
+
+                <div class="map"><iframe src="https://www.google.com/maps/d/embed?mid=1k8MSRaPAWmB5_lTmTxiuTX7yeww&hl=ru" width="50%" height="300"></iframe></div>
+
+        </div>  
+                <aside class="rightside col-md-4">
+                    <div class="column">
+                        <ul><h4>Как нас найти</h4>
+                            <li><h4>Адрес:</h4>
+                            05-600 Grojec ul.Mogielnicka, 33/1-07</li>
+                            <li><h4>Телефон:</h4>
+                            +48-505-785-987</li>
+                            <li><h4>Факс:</h4>
+                            +48-707-000-001</li>
+                            <li><h4>E-mail:</h4>
+                            ouremail@i-garden.com</li>
+                        </ul>
+                    </div>
+                </aside>
+</div>
+</div>

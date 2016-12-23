@@ -1,0 +1,43 @@
+<hr>
+<div id="content">
+
+    <div class="col">
+        <div class="post">
+    
+
+    <div class="article_item">
+        {% for item in items %}
+                <br>
+                <h2><a href="{{uri}}item/{{item.alias}}" >{{item.title}}</a></h2><br>
+                <img src="/{{constant ('IMAGES')}}/{{item.images}}" alt="{{item.alias}}" class="right">
+                {{item.introtext|raw}}
+                <p>{{item.date|date("d.m.Y")}}</p>
+                <span><a href="{{uri}}item/{{item.alias}}">Read more</a></span>
+        {%endfor%}
+    </div>
+    </div>
+    </div>
+</div>
+<div id="navigation">
+    <ul>
+        <li><a href="{{uri}}home/1">First page</a></li>
+        <li><a href="{{uri}}home/1">&lt;</a></li>
+        {%for page in navigation.previous%}
+            <li><a href="{{uri}}home/{{page}}">{{page}}</a></li>
+        {%endfor%}
+            <li><a href="{{uri}}home/{{navigation.current}}">{{navigation.current}}</a></li>
+        {%for page in navigation.next%}
+            <li><a href="{{uri}}home/{{page}}">{{page}}</a></li>
+        {%endfor%}
+        {%if navigation.next_pages is defined%}
+            <li><a href="{{uri}}home/{{navigation.next_pages}}">&gt;</a></li>
+        {%else%}
+            <li><a href="{{uri}}home/{{navigation.current}}">&gt;</a></li>
+        {%endif%}
+        {%if navigation.end is defined%}
+            <li><a href="{{uri}}home/{{navigation.end}}">Last page</a></li>
+        {%else%}
+            <li><a href="{{uri}}home/{{navigation.current}}">Last page</a></li>
+        {%endif%}
+    </ul>  
+</div>
